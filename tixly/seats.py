@@ -31,6 +31,8 @@ class SeatMap:
                 if run_len == 0:
                     run_start = i
                 run_len += 1
+            else:
+                run_len = 0
             if run_len == count:
                 block = [f"{row}{n + 1}" for n in range(run_start, run_start + count)]
                 for s in block:
