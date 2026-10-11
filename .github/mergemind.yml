@@ -1,0 +1,15 @@
+# MergeMind policy for the public playground.
+# Fork mode: contributors fork and open a PR; MergeMind never grants write access to strangers.
+autonomy: merge
+maintainers: [akii-codes]
+access:
+  mode: fork
+  ttl: 3h
+  checkin_at: 50%
+  min_account_age: 0d
+pr:
+  require_regression_test: true
+  ci_timeout: 30m
+  post_merge_watch: 3m
+guard:
+  sensitive_paths: [".env*", "**/.env*", "deploy/**", "**/secrets/**"]
